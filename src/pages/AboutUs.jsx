@@ -1,13 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Target, Users, Zap, Heart, Award, ArrowRight } from 'lucide-react';
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-ivory">
-      <Navbar />
 
       <div className="w-full max-w-[1180px] mx-auto px-6 pt-32 pb-20">
         {/* Header Section */}
@@ -122,12 +119,8 @@ const AboutUs = () => {
         </section>
       </div>
 
-      <Footer />
     </div>
   );
 };
 
 export default AboutUs;
-
-
-

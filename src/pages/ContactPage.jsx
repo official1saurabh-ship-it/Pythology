@@ -3,8 +3,6 @@ import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import emailjs from '@emailjs/browser';
 import contactimage from "../assets/contactimage.jpg";
 import { useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
 // EMAILJS CONFIGURATION
@@ -133,7 +131,6 @@ export default function ContactPage() {
 
     return (
         <div className="bg-ivory min-h-screen">
-            <Navbar />
 
             <section className="pt-32 pb-24 px-6">
                 <div className="max-w-[1180px] mx-auto">
@@ -294,7 +291,6 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <Footer />
         </div>
     );
 }

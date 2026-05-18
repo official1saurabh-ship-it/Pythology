@@ -76,13 +76,18 @@ const Footer = () => {
           <div className="space-y-8">
             <h5 className="font-display font-bold text-white text-sm uppercase tracking-widest">Resources</h5>
             <ul className="space-y-4">
-              {['System Status', 'Staff Training', 'Patient Guide', 'Technical Support'].map((link) => (
-                <li key={link}>
+              {[
+                { name: 'System Status', path: '/system-status' },
+                { name: 'Staff Training', path: '/staff-training' },
+                { name: 'Patient Guide', path: '/patient-guide' },
+                { name: 'Technical Support', path: '/technical-support' }
+              ].map((link) => (
+                <li key={link.name}>
                   <Link 
-                    to="/system-status" 
+                    to={link.path} 
                     className="text-white/60 hover:text-gold transition-colors text-sm font-medium"
                   >
-                    {link}
+                    {link.name}
                   </Link>
                 </li>
               ))}

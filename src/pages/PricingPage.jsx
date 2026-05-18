@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Check } from "lucide-react";
 
 const plans = [
@@ -50,7 +48,6 @@ const plans = [
 export default function PricingPage() {
     return (
         <div className="min-h-screen bg-ivory">
-            <Navbar />
 
             <section className="pt-32 pb-20 px-6">
                 <div className="max-w-[1180px] mx-auto">
@@ -130,9 +127,6 @@ export default function PricingPage() {
                 </div>
             </section>
             
-            <Footer />
         </div>
     );
 }
-
-

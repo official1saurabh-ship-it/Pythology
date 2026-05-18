@@ -15,6 +15,7 @@ import PathologyHelpDeskPage from './pages/PathologyHelpDeskPage';
 import PatientGuidePage from './pages/PatientGuidePage';
 import SystemStatusPage from './pages/SystemStatusPage';
 import StaffTrainingPage from './pages/StaffTrainingPage';
+import TechnicalSupportPage from './pages/TechnicalSupportPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/patient-guide" element={<PatientGuidePage />} />
         <Route path="/system-status" element={<SystemStatusPage />} />
         <Route path="/staff-training" element={<StaffTrainingPage />} />
+        <Route path="/technical-support" element={<TechnicalSupportPage />} />
 
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/about" element={<AboutUs />} />

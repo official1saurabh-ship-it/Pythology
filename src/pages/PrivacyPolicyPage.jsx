@@ -1,11 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const PrivacyPolicyPage = () => {
     return (
         <div className="bg-ivory min-h-screen">
-            <Navbar />
             
             <div className="w-full max-w-[1180px] mx-auto px-6 pt-32 pb-20">
 
@@ -110,7 +107,6 @@ const PrivacyPolicyPage = () => {
                 </section>
             </div>
 
-            <Footer />
         </div>
     );
 };
