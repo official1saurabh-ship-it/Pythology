@@ -47,7 +47,7 @@ export default function HeroSection() {
                     {/* CTA Row */}
                     <div className="flex flex-wrap gap-4 items-center">
                         <button className="grad-fire text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
-                            <a href='https://pathology.biosoftech.in/register'>Get Started Now</a>
+                            <a href='https://pytho.biosoftech.in/login'>Get Started Now</a>
                             <ArrowRight className="w-5 h-5" />
                         </button>
                         <div className="flex items-center gap-2 text-mist text-sm font-semibold">

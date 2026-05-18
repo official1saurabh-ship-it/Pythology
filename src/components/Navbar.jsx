@@ -108,11 +108,8 @@ const Navbar = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="https://pathology.biosoftech.in/login" className="px-5 py-2.5 text-sm font-bold text-ink hover:text-primary transition-colors">
+            <a href="https://pytho.biosoftech.in/login" className="grad-fire text-white px-8 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
               Login
-            </a>
-            <a href='https://pathology.biosoftech.in/register' className="grad-fire text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
-              Get Started
             </a>
           </div>
 
@@ -160,12 +157,9 @@ const Navbar = () => {
                 );
               })}
 
-              <div className="pt-6 grid grid-cols-2 gap-4">
-                <a href="https://pathology.biosoftech.in/login" className="px-4 py-3 rounded-xl border border-saas-border text-center text-ink font-bold text-sm active:bg-ivory">
+              <div className="pt-6">
+                <a href="https://pytho.biosoftech.in/login" className="block w-full px-4 py-3 rounded-xl grad-fire text-center text-white font-bold text-sm shadow-lg active:scale-95">
                   Login
-                </a>
-                <a href='https://pathology.biosoftech.in/register' className="px-4 py-3 rounded-xl grad-fire text-center text-white font-bold text-sm shadow-lg active:scale-95">
-                  Register
                 </a>
               </div>
             </div>

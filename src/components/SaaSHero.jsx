@@ -48,13 +48,13 @@ const SaaSHero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a href="https://pathology.biosoftech.in/register">
+            <a href="https://pytho.biosoftech.in/login">
               <button className="px-8 py-4 bg-saas-accent hover:bg-saas-accent/90 text-white rounded-2xl font-bold text-lg transition-all flex items-center gap-2 group shadow-lg shadow-saas-accent/25 active:scale-95">
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </a>
-            <a href="https://pathology.biosoftech.in/register">
+            <a href="https://pytho.biosoftech.in/login">
               <button className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-saas-border rounded-2xl font-bold text-lg transition-all active:scale-95">
                 Book a Demo
               </button>

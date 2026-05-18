@@ -284,8 +284,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
               >
-                <Link
-                  to={item.path}
+                <div
                   className="group relative flex flex-col h-full p-8 rounded-[1.5rem] bg-white border border-saas-border hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 overflow-hidden"
                 >
                   <div className="absolute top-0 left-0 w-full h-1.5 grad-fire transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
@@ -301,11 +300,8 @@ const Home = () => {
                     <p className="text-smoke text-sm leading-relaxed font-medium">
                       {item.desc}
                     </p>
-                    <div className="inline-flex items-center gap-2 text-primary font-bold tracking-widest text-[10px] pt-4 uppercase group-hover:gap-3 transition-all duration-300">
-                      View Module <ArrowRight className="w-4 h-4" />
-                    </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </div>

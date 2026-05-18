@@ -23,7 +23,7 @@ const FeaturesHero = () => {
             Everything you need to manage and grow your pathology. From patient records to staff management, we've got you covered with a modern, high-performance toolkit.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://pathology.biosoftech.in/register">
+            <a href="https://pytho.biosoftech.in/login">
               <button className="bg-saas-accent hover:brightness-110 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-saas-accent/20 transition-all active:scale-95">
                 Get Started
               </button>

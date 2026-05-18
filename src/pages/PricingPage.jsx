@@ -106,7 +106,7 @@ export default function PricingPage() {
                                         ))}
                                     </ul>
 
-                                    <a href="https://pathology.biosoftech.in/register" className="block pt-4">
+                                    <a href="https://pytho.biosoftech.in/login" className="block pt-4">
                                         <button
                                             className={`w-full py-4 rounded-xl font-bold transition-all
                                                 ${plan.highlighted
