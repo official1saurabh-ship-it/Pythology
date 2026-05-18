@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 const plans = [
     {
         name: "Starter",
-        price: "Γé╣999",
+        price: "₹999",
         period: "/month",
         desc: "Best for small pathology labs",
         features: [
@@ -17,7 +17,7 @@ const plans = [
     },
     {
         name: "Pro",
-        price: "Γé╣2499",
+        price: "₹1000",
         period: "/month",
         desc: "Most popular for growing labs",
         features: [

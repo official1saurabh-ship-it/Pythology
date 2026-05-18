@@ -5,7 +5,7 @@ import pathologyimage from "../assets/pathologyimage.png";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import girl from "../assets/Advantagesimg.png";
+import updationimage from "../assets/updationimage.png";
 import tables from "../assets/dashboard.png";
 import overview from "../assets/overview.jpeg";
 import {
@@ -241,7 +241,7 @@ const Home = () => {
               <div className="absolute -inset-4 bg-gold/10 blur-3xl rounded-full" />
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white">
                 <img
-                  src={girl}
+                  src={updationimage}
                   alt="Pathology Excellence"
                   className="w-full h-full object-cover"
                 />

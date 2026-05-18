@@ -1,6 +1,6 @@
 import React from "react";
 import { Users, Microscope, IndianRupee, BarChart, MessageCircle, ArrowRight, Zap, ShieldCheck, Smartphone, CheckCircle } from "lucide-react";
-import Laptopbag from "../assets/Laptop-bag.png";
+import pathology1 from "../assets/pathology1.png";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -75,7 +75,7 @@ export default function HeroSection() {
                     
                     <div className="relative z-10 transform perspective-1000 rotate-y-[-10deg] rotate-x-[5deg] hover:rotate-0 transition-transform duration-700">
                         <img
-                            src={Laptopbag}
+                            src={pathology1}
                             alt="Pathology Dashboard"
                             className="w-full h-auto object-contain drop-shadow-[0_32px_64px_rgba(76,53,117,0.25)] rounded-[2rem]"
                         />
