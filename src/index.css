@@ -1,22 +1,42 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @theme {
-  --color-primary: #FF8C42;
-  --color-dark: #121212;
-  --color-darker: #0A0A0A;
+  --color-primary: #4c3575;
+  --color-primary-deep: #372954;
+  --color-primary-glow: #5d448b;
+  --color-primary-pale: #f4f2f9;
   
-  /* SaaS Theme - Light Mode */
-  --color-saas-bg: #FFFFFF;
-  --color-saas-card: #F9FAFB;
-  --color-saas-border: #E5E7EB;
-  --color-saas-accent: #0D9488;
+  --color-gold: #c9900c;
+  --color-gold-light: #f0b429;
+  --color-gold-faint: #fef5dc;
+  
+  --color-ivory: #fdfaf5;
+  --color-ivory-2: #f8f2e8;
+  
+  --color-ink: #1a0a00;
+  --color-smoke: #5c3d2a;
+  --color-mist: #8a6045;
+  
+  /* SaaS Theme Mapping */
+  --color-saas-bg: var(--color-ivory);
+  --color-saas-card: #FFFFFF;
+  --color-saas-border: #f0e4cc;
+  --color-saas-accent: var(--color-primary);
+  
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 @layer base {
   html, body {
-    @apply bg-saas-bg text-gray-900 font-sans antialiased;
+    @apply bg-saas-bg text-ink font-body antialiased;
     overflow-x: hidden;
     scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-display;
   }
 
   /* Global scrollbar removal */
@@ -46,4 +66,20 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.grad-fire {
+  background: linear-gradient(135deg, #0D9488 0%, #0F766E 60%, #064E4B 100%);
+}
+
+.grad-ember {
+  background: linear-gradient(135deg, #0D9488 0%, #c9900c 100%);
+}
+
+.grad-gold {
+  background: linear-gradient(135deg, #c9900c 0%, #f0b429 50%, #c9900c 100%);
+}
+
+.grad-bg {
+  background: linear-gradient(160deg, #fdfaf5 0%, #f8f2e8 50%, #fdfaf5 100%);
 }

@@ -27,7 +27,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
@@ -38,7 +45,7 @@ const Navbar = () => {
   ];
 
   // Helper function for smooth scroll on same page
-  const handleScroll = (e, targetId) => {
+  const handleScrollTo = (e, targetId) => {
     if (location.pathname === '/') {
       e.preventDefault();
       const element = document.getElementById(targetId);
@@ -62,18 +69,23 @@ const Navbar = () => {
   }, [location.pathname, location.hash]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-saas-border">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-ivory/95 backdrop-blur-xl border-b border-saas-border shadow-lg shadow-primary/5' : 'bg-transparent'}`}>
+      <div className="max-w-[1180px] mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo Section */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center gap-2 font-black text-2xl tracking-tight text-saas-accent">
-              <img src={SKOLA} alt="Pathology Logo" className='w-30 h-20' />
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-10 h-10 grad-fire rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center text-white font-display text-xl">
+                P
+              </div>
+              <span className="font-display font-extrabold text-xl tracking-tight text-ink">
+                Pathology<span className="text-primary">.</span>
+              </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center bg-gray-100/50 p-1 rounded-2xl border border-saas-border">
+          <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => {
               const isActive = checkActive(item.path);
               return (
@@ -82,32 +94,25 @@ const Navbar = () => {
                   to={item.path}
                   onClick={(e) => {
                     if (item.path.startsWith('/#')) {
-                      handleScroll(e, item.path.substring(2));
+                      handleScrollTo(e, item.path.substring(2));
                     }
                   }}
-                  className={`relative px-4 py-2 rounded-xl text-sm font-bold transition-all duration-300 ${isActive ? 'text-white' : 'text-gray-500 hover:text-gray-900'
+                  className={`px-4 py-2 rounded-lg text-[14px] font-semibold transition-all duration-300 ${isActive ? 'text-primary bg-primary-pale' : 'text-smoke hover:text-primary hover:bg-primary-pale/50'
                     }`}
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="active-pill"
-                      className="absolute inset-0 bg-saas-accent rounded-xl shadow-lg shadow-saas-accent/20"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{item.name}</span>
+                  {item.name}
                 </Link>
               );
             })}
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-4">
-            <a href="https://pathology.biosoftech.in/login" className="text-gray-500 hover:text-gray-900 font-bold text-sm px-4 py-2 transition-colors active:scale-95">
+          <div className="hidden md:flex items-center gap-3">
+            <a href="https://pathology.biosoftech.in/login" className="px-5 py-2.5 text-sm font-bold text-ink hover:text-primary transition-colors">
               Login
             </a>
-            <a href='https://pathology.biosoftech.in/register' className="bg-saas-accent hover:bg-saas-accent/90 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-saas-accent/20 transition-all hover:scale-105 active:scale-95">
-              Register
+            <a href='https://pathology.biosoftech.in/register' className="grad-fire text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+              Get Started
             </a>
           </div>
 
@@ -115,7 +120,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 text-gray-500 hover:text-saas-accent transition-colors active:scale-90"
+              className="p-2 text-ink hover:text-primary transition-colors active:scale-90"
             >
               {mobileOpen ? <X /> : <Menu />}
             </button>
@@ -132,7 +137,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-b border-saas-border overflow-hidden"
           >
-            <div className="px-4 pt-2 pb-6 space-y-1 max-h-[80vh] overflow-y-auto">
+            <div className="px-6 pt-2 pb-8 space-y-1">
               {navItems.map((item) => {
                 const isActive = checkActive(item.path);
                 return (
@@ -141,12 +146,12 @@ const Navbar = () => {
                     to={item.path}
                     onClick={(e) => {
                       if (item.path.startsWith('/#')) {
-                        handleScroll(e, item.path.substring(2));
+                        handleScrollTo(e, item.path.substring(2));
                       }
                     }}
                     className={`flex items-center gap-3 px-4 py-4 rounded-xl font-bold transition-colors ${isActive
-                      ? 'bg-saas-accent/10 text-saas-accent'
-                      : 'text-gray-500 hover:bg-gray-50'
+                      ? 'bg-primary-pale text-primary'
+                      : 'text-smoke hover:bg-ivory'
                       }`}
                   >
                     <item.icon className="w-5 h-5" />
@@ -155,11 +160,11 @@ const Navbar = () => {
                 );
               })}
 
-              <div className="pt-4 grid grid-cols-2 gap-3">
-                <a href="https://pathology.biosoftech.in/login" className="px-4 py-3 rounded-xl border border-saas-border text-center text-gray-900 font-bold text-sm active:bg-gray-50">
+              <div className="pt-6 grid grid-cols-2 gap-4">
+                <a href="https://pathology.biosoftech.in/login" className="px-4 py-3 rounded-xl border border-saas-border text-center text-ink font-bold text-sm active:bg-ivory">
                   Login
                 </a>
-                <a href='https://pathology.biosoftech.in/register' className="px-4 py-3 rounded-xl bg-saas-accent text-center text-white font-bold text-sm shadow-lg active:scale-95">
+                <a href='https://pathology.biosoftech.in/register' className="px-4 py-3 rounded-xl grad-fire text-center text-white font-bold text-sm shadow-lg active:scale-95">
                   Register
                 </a>
               </div>
