@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF8C42;
+  --color-dark: #121212;
+  --color-darker: #0A0A0A;
+  
+  /* SaaS Theme - Light Mode */
+  --color-saas-bg: #FFFFFF;
+  --color-saas-card: #F9FAFB;
+  --color-saas-border: #E5E7EB;
+  --color-saas-accent: #0D9488;
+}
+
+@layer base {
+  html, body {
+    @apply bg-saas-bg text-gray-900 font-sans antialiased;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Global scrollbar removal */
+  html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
