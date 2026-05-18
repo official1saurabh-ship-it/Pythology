@@ -1,10 +1,4 @@
 import React from 'react';
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin
-} from 'lucide-react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import SKOLAPORTRAITE from '../assets/SKOLAPORTRAITE.png';
 
@@ -39,21 +33,6 @@ const Footer = () => {
             <p className="text-white/60 text-sm leading-relaxed font-medium">
               Empowering pathology labs across India with smart, secure, and integrated diagnostic management solutions.
             </p>
-            <div className="flex gap-3">
-              {[
-                { icon: Facebook, href: 'https://www.facebook.com/biosoftech/' },
-                { icon: Instagram, href: 'https://www.instagram.com/skolamitra/' },
-                { icon: Linkedin, href: 'https://www.linkedin.com/company/biosoftech-solutions/' }
-              ].map((social, i) => (
-                <a 
-                  key={i}
-                  href={social.href} 
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div className="space-y-8">
